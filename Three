@@ -1,0 +1,45 @@
+#! /bin/bash
+###################################################################################
+# Three, randomness
+# Please write a function/method/program that will generate a random number.
+#
+# In this specific assignment, we do not allow the use of built in random generators, 
+# we want you to make your own. Other than that, we give you free rein.
+#
+###################################################################################
+clear
+sleep 1
+echo "##########################################"
+echo "# TechnicalTesterDeveloperSkills101Test"
+echo "# Three, randomness"    
+echo "# creating a random number"
+## Current timestamps nanoseconds
+Nmbr1=`date +%N`
+
+## Taking away the first 0 if it occurrs. 
+## Leading 0 Causes the interpreter to 
+## assume that the number is an octal
+Nmbr1=`echo $Nmbr1|sed 's/^0*//'`
+
+## Current timestamp in seconds
+Nmbr2=`date +%s` 
+
+## Current timestamps nanoseconds
+Nmbr3=`date +%N`
+
+## Seed creating, returning the remainder when dividing seconds with nanoseconds
+let "Nmbr2 = ($Nmbr2 % $Nmbr1)" 
+## Actual randomising: To get a BIG number (as we know, big is beautiful ;) we multiply the Seed with
+## the created seed. Which is not actually a seed so I'll have to rename the variable. Done. 
+## This comment doesn't make any sense anymore
+let "RNDM = ($Nmbr3 * $Nmbr2)"  
+echo "# $RNDM"
+
+## A quick oneliner, just the nanoseconds
+
+sleep 1;
+echo "# A Quick 'Oneliner':" `date +%N`       
+echo "##########################################"
+
+echo "...press ENTER to return..."
+read exit

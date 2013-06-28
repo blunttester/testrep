@@ -1,0 +1,46 @@
+#! /bin/bash
+###################################################################################
+# Zero, the Fibonacci sequence
+# 1,1,2,3,5,8,13,21,34...
+# The sequence is defined as the sum of the two previous numbers added together.
+# 
+# Please write a program that will calculate the n:th Fibonacci number
+# Source used: http://www.zacharyfox.com/blog/fibonacci-project/fibonacci-in-bash
+# Modified the printout so that it prints only the wanted number
+####################################################################################
+clear
+sleep 1
+echo "#######################################################"
+echo "# TechnicalTesterDeveloperSkills101Test"
+echo "# Zero, the Fibonacci sequence"
+echo "# The program that calculates the n:th Fibonacci number"
+
+function main {
+  printf "# What number from the fibonacci sequence you'd like to get?\n
+# E.g. 3rd (enter 3), 15th (enter 15) or 21st (enter 21) etc.\n# "
+  read n
+  fibonacci $n
+}
+
+function fibonacci {
+  a=0
+  b=1
+  i=0
+
+  while [ $i  -lt $1 ]
+  do
+    let sum=$a+$b
+    let a=$b
+    let b=$sum
+    let i=$i+1
+    echo -n "#"
+
+  done
+    echo "#"
+     printf "# The "$n" number of the Fibonazzi sequel is "$a"\n"
+    echo "#######################################################"
+}
+
+main
+echo "...press ENTER to return..."
+read exit

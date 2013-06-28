@@ -1,0 +1,39 @@
+#! /bin/bash
+###################################################################################
+# Two, Palindrome
+# A palindrome is defined as a word that reads the same both forward and backwards.
+# Please write a program that checks if a string is a palindrome or not
+####################################################################################
+function main {
+clear
+sleep 1
+echo "#######################################################"
+echo "# TechnicalTesterDeveloperSkills101Test"
+echo "# Two, Palindrome"
+echo "# Verifies if the entered string is palindrome or not"
+echo "# NOTE: The script is not case sensitive!!!"
+echo "#"
+echo "# ENTER THE DESIRED WORD"
+read n
+
+if ( test -s $n ); then
+	echo "# String is empty!!"
+	echo "# Enter string to be checked" 
+	echo "# e.g. ./Two saippuakauppias"
+	echo "#######################################################"
+	exit 1
+else
+
+	String=`echo $n | awk '{print tolower($0)}'`
+
+if [ $String = `echo $String | rev` ] ; then
+	echo "# $n is a palindrome!"
+else 
+	echo "# $n is NOT a palindrome!"
+fi
+fi
+echo "#######################################################"
+}
+main
+echo "...press ENTER to return..."
+read exit

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function main {
+clear
+cat README.TXT
+
+}
+main
+echo "...press ENTER to return..."
+read exit

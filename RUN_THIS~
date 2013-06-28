@@ -1,0 +1,9 @@
+echo "#########################################################################"
+echo "# TechnicalTesterDeveloperSkills101Test"
+echo "# One, the Fibonacci sequence revisited"
+echo "# The program that calculates the n:th Fibonacci number recursively"
+    	#echo -n "$FIBO "
+  echo "#"
+    echo "#######################################################"
+  	echo $1
+  	echo $(( a + b ))

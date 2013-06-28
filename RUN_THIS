@@ -1,0 +1,59 @@
+#!/bin/bash
+function main (){
+clear
+echo "#########################################################################"
+echo "# "
+echo "# "
+echo "# "
+echo "# "
+echo "# 0) Zero, the Fibonacci sequence"
+echo "# 1) One, the Fibonacci sequence recursively"
+echo "# 2) Two, Palindrome"
+echo "# 3) Three, randomness"
+echo "# 4) INFO"
+echo "# 5) EXIT"
+
+read n
+call $n
+}
+
+function call (){
+case "$1" in
+
+	0) echo "Launching 0) Zero, the Fibonacci sequence..:"
+		sleep 1
+		./Zero
+		main
+		;;
+		
+		
+	1) echo "Launching 1) One, the Fibonacci sequence recursively"
+		sleep 1
+		./One
+		main
+		;;
+
+	2) echo "launching 2) Two, Palindrome"
+		sleep 1
+		./Two
+		main
+		;;
+	3) echo "Launching 3) Three, randomness"
+		sleep 1
+		./Three
+		main
+		;;
+	4) echo "Echoing the INFO-file"
+		sleep 1
+		./INFO
+		main
+		;;
+
+	5) echo "# Exiting the program. Good Bye!"
+  	   echo "#########################################################################"
+		;;
+esac
+}
+
+main
+exit 0
